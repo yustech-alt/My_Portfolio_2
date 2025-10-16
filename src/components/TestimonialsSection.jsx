@@ -4,13 +4,39 @@ export function TestimonialsSection({ isDarkMode, isVisible }) {
   return (
     <section
       className={combineClasses(
-        "py-20 px-6",
+        "py-20 px-6 relative overflow-hidden",
         themeClasses.bg.primary(isDarkMode),
         themeClasses.transition
       )}
       data-section="testimonials"
     >
-      <div className="max-w-7xl mx-auto">
+      {/* Testimonials Animated Background */}
+      <div className="absolute inset-0">
+        {/* Base gradient */}
+        <div className={combineClasses(
+          'absolute inset-0 opacity-20',
+          isDarkMode 
+            ? 'bg-gradient-to-tr from-slate-900 via-gray-800/30 to-blue-900/20' 
+            : 'bg-gradient-to-tr from-slate-50 via-gray-100/30 to-blue-50/20'
+        )}></div>
+        
+        {/* Quote-inspired shapes */}
+        <div className="absolute top-24 left-24 w-16 h-16 bg-yellow-500/5 rounded-full animate-pulse"></div>
+        <div className="absolute bottom-24 right-32 w-20 h-20 bg-green-500/5 rounded-full animate-bounce" style={{animationDelay: '2s'}}></div>
+        <div className="absolute top-2/3 left-1/2 w-12 h-12 bg-blue-500/5 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+        
+        {/* Star pattern */}
+        <div className="absolute top-1/4 right-1/4 w-3 h-3 bg-yellow-400/15 transform rotate-45 animate-spin" style={{animationDuration: '30s'}}></div>
+        <div className="absolute bottom-1/3 left-1/3 w-2 h-2 bg-yellow-400/15 transform rotate-45 animate-spin" style={{animationDuration: '25s', animationDelay: '2s'}}></div>
+        
+        {/* Curved lines */}
+        <div className="absolute top-0 left-0 w-full h-full opacity-5">
+          <div className="absolute top-1/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-yellow-400/20 to-transparent transform rotate-3"></div>
+          <div className="absolute bottom-1/3 right-0 w-full h-px bg-gradient-to-l from-transparent via-green-400/20 to-transparent transform -rotate-3"></div>
+        </div>
+      </div>
+      
+      <div className="max-w-7xl mx-auto relative z-10">
         <div
           className={`mb-12 transition-all duration-1000 ease-out ${
             isVisible.testimonials ?
@@ -66,27 +92,16 @@ export function TestimonialsSection({ isDarkMode, isVisible }) {
                 themeClasses.text.primary(isDarkMode)
               )}
             >
-              John transformed our entire digital strategy with his innovative
-              approach and technical expertise.
+              "Yuslabi delivered our enterprise dashboard 2 weeks ahead of schedule. 
+              The scalable architecture he built now handles 10x our original traffic with zero downtime."
             </p>
             <div className="flex items-center">
-              <div
-                className={combineClasses(
-                  "w-12 h-12 rounded-full mr-4 flex items-center justify-center",
-                  isDarkMode ? "bg-gray-700" : "bg-gray-200"
-                )}
-              >
-                <svg
-                  className="w-6 h-6 text-gray-400"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
-                    clipRule="evenodd"
-                  />
-                </svg>
+              <div className="w-12 h-12 rounded-full mr-4 overflow-hidden">
+                <img
+                  src="/images/testimonials/mark-stevens.jpg"
+                  alt="Mark Stevens"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div>
                 <div
@@ -103,7 +118,7 @@ export function TestimonialsSection({ isDarkMode, isVisible }) {
                     themeClasses.text.secondary(isDarkMode)
                   )}
                 >
-                  CEO, TechnoCore
+                  CTO, DataFlow Systems
                 </div>
                 <div className="flex items-center mt-1">
                   <svg
@@ -158,27 +173,16 @@ export function TestimonialsSection({ isDarkMode, isVisible }) {
                 themeClasses.text.primary(isDarkMode)
               )}
             >
-              The product management skills demonstrated were exceptional and
-              directly contributed to our startup's success.
+              "Working with Yuslabi was a game-changer. His microservices architecture reduced our API response time by 70% 
+              and his mentorship elevated our entire development team."
             </p>
             <div className="flex items-center">
-              <div
-                className={combineClasses(
-                  "w-12 h-12 rounded-full mr-4 flex items-center justify-center",
-                  isDarkMode ? "bg-gray-700" : "bg-gray-200"
-                )}
-              >
-                <svg
-                  className="w-6 h-6 text-gray-400"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
-                    clipRule="evenodd"
-                  />
-                </svg>
+              <div className="w-12 h-12 rounded-full mr-4 overflow-hidden">
+                <img
+                  src="/images/testimonials/emily-rodriguez.jpg"
+                  alt="Emily Rodriguez"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div>
                 <div
@@ -195,7 +199,7 @@ export function TestimonialsSection({ isDarkMode, isVisible }) {
                     themeClasses.text.secondary(isDarkMode)
                   )}
                 >
-                  Founder, GreenTech
+                  Lead Developer, FinanceFlow
                 </div>
                 <div className="flex items-center mt-1">
                   <svg
@@ -250,27 +254,16 @@ export function TestimonialsSection({ isDarkMode, isVisible }) {
                 themeClasses.text.primary(isDarkMode)
               )}
             >
-              A true professional who understands both technical challenges
-              and business objectives.
+              "Yuslabi's expertise in React and cloud architecture was instrumental in scaling our platform to 50K+ users. 
+              His code quality and documentation standards are exceptional."
             </p>
             <div className="flex items-center">
-              <div
-                className={combineClasses(
-                  "w-12 h-12 rounded-full mr-4 flex items-center justify-center",
-                  isDarkMode ? "bg-gray-700" : "bg-gray-200"
-                )}
-              >
-                <svg
-                  className="w-6 h-6 text-gray-400"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
-                    clipRule="evenodd"
-                  />
-                </svg>
+              <div className="w-12 h-12 rounded-full mr-4 overflow-hidden">
+                <img
+                  src="/images/testimonials/david-chen.jpg"
+                  alt="David Chen"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div>
                 <div
@@ -287,7 +280,7 @@ export function TestimonialsSection({ isDarkMode, isVisible }) {
                     themeClasses.text.secondary(isDarkMode)
                   )}
                 >
-                  CTO, Digital Pioneer
+                  Product Manager, CloudScale
                 </div>
                 <div className="flex items-center mt-1">
                   <svg

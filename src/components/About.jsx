@@ -5,39 +5,71 @@ export default function About({ isVisible }) {
   const { isDarkMode } = useTheme();
 
   const skills = [
-    { name: 'JavaScript/TypeScript', level: 95 },
-    { name: 'React/Next.js', level: 90 },
-    { name: 'Node.js/Express', level: 85 },
-    { name: 'Python', level: 80 },
-    { name: 'Database Design', level: 85 },
-    { name: 'Cloud Services (AWS/Azure)', level: 75 }
+    { name: 'React/Next.js/TypeScript', level: 95 },
+    { name: 'Node.js/Express/MongoDB', level: 90 },
+    { name: 'Python/Django/FastAPI', level: 85 },
+    { name: 'AWS/Docker/Kubernetes', level: 80 },
+    { name: 'PostgreSQL/Redis/GraphQL', level: 85 },
+    { name: 'Git/CI-CD/Agile/Scrum', level: 90 }
   ];
 
   const achievements = [
     {
       year: '2024',
-      title: 'Senior Software Engineer',
-      description: 'Leading full-stack development projects and mentoring junior developers'
+      title: 'Senior Full-Stack Developer',
+      description: 'Led development of 5+ enterprise applications, mentored 3 junior developers, improved system performance by 40%'
     },
     {
       year: '2023',
       title: 'Product Launch Success',
-      description: 'Successfully launched 3 major products serving 10K+ users'
+      description: 'Delivered 3 major products serving 15K+ active users, achieved 99.9% uptime, reduced load times by 60%'
     },
     {
       year: '2022',
-      title: 'Technical Innovation Award',
-      description: 'Recognized for implementing scalable architecture solutions'
+      title: 'Technical Architecture Lead',
+      description: 'Designed microservices architecture serving 50K+ requests/day, reduced deployment time by 75%'
     }
   ];
 
   return (
     <section className={combineClasses(
-      'py-20 px-6',
+      'py-20 px-6 relative overflow-hidden',
       themeClasses.bg.secondary(isDarkMode),
       themeClasses.transition
     )} data-section="about" id="about">
-      <div className="max-w-7xl mx-auto">
+      {/* Professional Animated Background */}
+      <div className="absolute inset-0">
+        {/* Base gradient overlay */}
+        <div className={combineClasses(
+          'absolute inset-0 opacity-30',
+          isDarkMode 
+            ? 'bg-gradient-to-tr from-gray-900 via-slate-800/50 to-blue-900/20' 
+            : 'bg-gradient-to-tr from-gray-50 via-blue-50/30 to-indigo-50/20'
+        )}></div>
+        
+        {/* Animated geometric elements */}
+        <div className="absolute top-10 right-10 w-40 h-40 bg-gradient-to-r from-blue-500/3 to-purple-500/3 rounded-full animate-pulse"></div>
+        <div className="absolute bottom-20 left-20 w-28 h-28 bg-gradient-to-l from-indigo-500/3 to-cyan-500/3 rounded-full animate-bounce" style={{animationDelay: '2s'}}></div>
+        <div className="absolute top-1/2 right-1/4 w-16 h-16 bg-purple-500/3 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+        
+        {/* Floating dots */}
+        <div className="absolute top-1/4 left-1/5 w-3 h-3 bg-blue-400/15 rounded-full animate-ping"></div>
+        <div className="absolute bottom-1/4 right-1/5 w-2 h-2 bg-purple-400/15 rounded-full animate-ping" style={{animationDelay: '2s'}}></div>
+        <div className="absolute top-3/4 left-3/4 w-1 h-1 bg-indigo-400/15 rounded-full animate-ping" style={{animationDelay: '4s'}}></div>
+        
+        {/* Subtle lines pattern */}
+        <div className={combineClasses(
+          'absolute inset-0 opacity-3',
+          'bg-[linear-gradient(90deg,_rgba(59,130,246,0.1)_1px,_transparent_1px),_linear-gradient(rgba(59,130,246,0.1)_1px,_transparent_1px)]',
+          'bg-[length:100px_100px]'
+        )}></div>
+        
+        {/* Moving gradient orbs */}
+        <div className="absolute top-1/3 left-1/6 w-64 h-64 bg-gradient-to-r from-blue-500/2 to-transparent rounded-full blur-3xl animate-pulse" style={{animationDelay: '3s'}}></div>
+        <div className="absolute bottom-1/3 right-1/6 w-48 h-48 bg-gradient-to-l from-purple-500/2 to-transparent rounded-full blur-3xl animate-pulse" style={{animationDelay: '5s'}}></div>
+      </div>
+      
+      <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Header */}
         <div className={`mb-16 transition-all duration-1000 ease-out ${
           isVisible 
@@ -52,13 +84,14 @@ export default function About({ isVisible }) {
             'text-4xl font-bold mb-4 transition-colors duration-300',
             isDarkMode ? 'text-white' : 'text-gray-900'
           )}>
-            Passionate about creating digital solutions
+            Transforming Ideas Into Scalable Solutions
           </h2>
           <p className={combineClasses(
             'max-w-2xl text-lg transition-colors duration-300',
             isDarkMode ? 'text-gray-300' : 'text-gray-600'
           )}>
-            Software engineer and product manager with a passion for building innovative technology solutions that make a real impact.
+            Full-stack developer with 5+ years of experience building enterprise applications and leading product development. 
+            I specialize in React, Node.js, and cloud architecture, delivering solutions that scale from startup to enterprise.
           </p>
         </div>
 
@@ -71,24 +104,29 @@ export default function About({ isVisible }) {
           }`}>
             {/* Profile Photo */}
             <div className="mb-8 flex justify-center lg:justify-start">
-              <div className={combineClasses(
-                'w-64 h-64 rounded-2xl flex items-center justify-center hover:shadow-2xl transition-all duration-300 group relative overflow-hidden',
-                isDarkMode ? 'bg-gradient-to-br from-gray-700 to-gray-800' : 'bg-gradient-to-br from-gray-100 to-gray-200'
-              )}>
-                {/* Placeholder for actual photo */}
+              <div className="relative">
+                {/* Decorative background elements */}
+                <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 rounded-3xl blur-lg opacity-75 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute -inset-2 bg-gradient-to-r from-blue-400/30 to-purple-400/30 rounded-2xl blur-md"></div>
+                
                 <div className={combineClasses(
-                  'w-32 h-32 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300',
-                  isDarkMode ? 'bg-gray-600' : 'bg-gray-300'
+                  'w-64 h-64 rounded-2xl hover:shadow-2xl transition-all duration-300 group relative overflow-hidden border-2',
+                  isDarkMode 
+                    ? 'bg-gradient-to-br from-gray-700 via-gray-800 to-gray-900 border-gray-600/50' 
+                    : 'bg-gradient-to-br from-white via-gray-50 to-gray-100 border-gray-200/50'
                 )}>
-                  <svg className="w-16 h-16 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
-                  </svg>
-                </div>
-                {/* Overlay with contact info */}
-                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 rounded-2xl flex items-end justify-center pb-4">
-                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center">
-                    <p className="text-white font-medium">Yusuf Labi</p>
-                    <p className="text-gray-200 text-sm">Software Engineer</p>
+                  <img
+                    src="/images/about-profile.jpg"
+                    alt="Yusuf Labi - Software Engineer"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  {/* Enhanced overlay with better styling */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-2xl flex items-end justify-center pb-6">
+                    <div className="text-center transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                      <p className="text-white font-bold text-lg">YusLabi</p>
+                      <p className="text-gray-200 text-sm font-medium">Software Engineer</p>
+                      <div className="w-12 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto mt-2"></div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -233,10 +271,14 @@ export default function About({ isVisible }) {
             </div>
 
             {/* Call to Action */}
-            <div className={combineClasses(
-              'p-6 rounded-xl border-2 border-dashed transition-colors duration-300',
-              isDarkMode ? 'border-gray-600 bg-gray-800/50' : 'border-gray-300 bg-gray-50'
-            )}>
+            <div className="relative">
+              <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-xl blur opacity-75"></div>
+              <div className={combineClasses(
+                'relative p-6 rounded-xl border transition-all duration-300 backdrop-blur-sm',
+                isDarkMode 
+                  ? 'border-gray-600/50 bg-gray-800/80 hover:bg-gray-800/90' 
+                  : 'border-gray-200/50 bg-white/80 hover:bg-white/90'
+              )}>
               <h4 className={combineClasses(
                 'font-bold mb-2 transition-colors duration-300',
                 isDarkMode ? 'text-white' : 'text-gray-900'
@@ -249,18 +291,28 @@ export default function About({ isVisible }) {
                 Let's discuss how we can bring your ideas to life.
               </p>
               <div className="flex space-x-3">
-                <button className={combineClasses(
-                  'px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 hover:scale-105',
-                  themeClasses.button.primary(isDarkMode)
-                )}>
-                  Get in Touch
+                <button className="group relative px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-medium rounded-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-3 focus:ring-blue-500/50">
+                  <span className="relative z-10 flex items-center space-x-2">
+                    <span>Get in Touch</span>
+                    <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                  </span>
                 </button>
                 <button className={combineClasses(
-                  'px-4 py-2 border rounded-md text-sm font-medium transition-all duration-200 hover:scale-105',
-                  themeClasses.button.secondary(isDarkMode)
+                  'group px-6 py-3 border-2 font-medium rounded-lg transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-3',
+                  isDarkMode 
+                    ? 'border-gray-600 text-gray-300 hover:bg-gray-800 hover:border-gray-500 focus:ring-gray-500/50' 
+                    : 'border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400 focus:ring-gray-400/50'
                 )}>
-                  Download CV
+                  <span className="flex items-center space-x-2">
+                    <span>Download CV</span>
+                    <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-y-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                  </span>
                 </button>
+              </div>
               </div>
             </div>
           </div>

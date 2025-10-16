@@ -4,67 +4,44 @@ export function Footer({ isDarkMode }) {
   return (
     <footer
       className={combineClasses(
-        "py-16 px-6",
-        themeClasses.bg.secondary(isDarkMode),
+        "py-12 px-6 border-t",
+        themeClasses.bg.primary(isDarkMode),
+        themeClasses.border.primary(isDarkMode),
         themeClasses.transition
       )}
     >
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
-          {/* Newsletter Section */}
-          <div className="lg:col-span-2">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="md:col-span-2">
             <div
               className={combineClasses(
-                "text-2xl font-bold italic mb-4",
+                "text-2xl font-bold mb-4",
                 themeClasses.text.primary(isDarkMode),
                 themeClasses.transition
               )}
             >
-              YusLabi
+              Yuslabi
             </div>
             <p
               className={combineClasses(
-                "mb-6",
+                "mb-4 max-w-md",
                 themeClasses.text.secondary(isDarkMode),
                 themeClasses.transition
               )}
             >
-              Stay updated with the latest insights and technology trends
+              Full-stack developer specializing in React, Node.js, and cloud architecture. 
+              Building scalable solutions that drive business growth and user engagement.
             </p>
-            <div className="flex">
-              <input
-                type="email"
-                placeholder="Email address"
-                className={combineClasses(
-                  "flex-1 px-4 py-3 border rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500",
-                  isDarkMode ?
-                    "bg-gray-700 border-gray-600 text-white placeholder-gray-400"
-                  : "bg-white border-gray-300 text-gray-900 placeholder-gray-500"
-                )}
-              />
-              <button
-                className={combineClasses(
-                  "px-6 py-3 rounded-r-md",
-                  themeClasses.button.primary(isDarkMode),
-                  themeClasses.transition
-                )}
-              >
-                Subscribe
-              </button>
+            <div className="flex space-x-4">
+              <span className={combineClasses(
+                "text-sm font-medium",
+                themeClasses.text.primary(isDarkMode)
+              )}>
+                📧 yuslabibalogun2705@gmail.com
+              </span>
             </div>
-            <p
-              className={combineClasses(
-                "text-xs mt-2",
-                themeClasses.text.muted(isDarkMode),
-                themeClasses.transition
-              )}
-            >
-              By subscribing, you agree to our privacy policy and consent to
-              receive updates
-            </p>
           </div>
 
-          {/* Company Links */}
           <div>
             <h3
               className={combineClasses(
@@ -73,39 +50,51 @@ export function Footer({ isDarkMode }) {
                 themeClasses.transition
               )}
             >
-              Company
+              Navigation
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2">
               <li>
                 <a
-                  href="#"
+                  href="#hero"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.querySelector('[data-section="hero"]')?.scrollIntoView({behavior: 'smooth'});
+                  }}
                   className={combineClasses(
+                    "hover:text-blue-500 cursor-pointer",
                     themeClasses.text.secondary(isDarkMode),
-                    "hover:text-blue-600 dark:hover:text-blue-400",
                     themeClasses.transition
                   )}
                 >
-                  About us
+                  Home
                 </a>
               </li>
               <li>
                 <a
-                  href="#"
+                  href="#about"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.querySelector('[data-section="about"]')?.scrollIntoView({behavior: 'smooth'});
+                  }}
                   className={combineClasses(
+                    "hover:text-blue-500 cursor-pointer",
                     themeClasses.text.secondary(isDarkMode),
-                    "hover:text-blue-600 dark:hover:text-blue-400",
                     themeClasses.transition
                   )}
                 >
-                  Careers
+                  About
                 </a>
               </li>
               <li>
                 <a
-                  href="#"
+                  href="#services"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.querySelector('[data-section="services"]')?.scrollIntoView({behavior: 'smooth'});
+                  }}
                   className={combineClasses(
+                    "hover:text-blue-500 cursor-pointer",
                     themeClasses.text.secondary(isDarkMode),
-                    "hover:text-blue-600 dark:hover:text-blue-400",
                     themeClasses.transition
                   )}
                 >
@@ -114,32 +103,23 @@ export function Footer({ isDarkMode }) {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="#skills"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.querySelector('[data-section="skills"]')?.scrollIntoView({behavior: 'smooth'});
+                  }}
                   className={combineClasses(
+                    "hover:text-blue-500 cursor-pointer",
                     themeClasses.text.secondary(isDarkMode),
-                    "hover:text-blue-600 dark:hover:text-blue-400",
                     themeClasses.transition
                   )}
                 >
-                  Contact
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className={combineClasses(
-                    themeClasses.text.secondary(isDarkMode),
-                    "hover:text-blue-600 dark:hover:text-blue-400",
-                    themeClasses.transition
-                  )}
-                >
-                  Resources
+                  Skills
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Legal Links */}
           <div>
             <h3
               className={combineClasses(

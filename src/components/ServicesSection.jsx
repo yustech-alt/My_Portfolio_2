@@ -3,10 +3,32 @@ import { combineClasses } from "../utils/themeClasses.js";
 export function ServicesSection({ isDarkMode, isVisible }) {
   return (
     <section
-      className={`py-20 px-6 transition-colors duration-300 ${isDarkMode ? "bg-gray-800" : "bg-gray-50"}`}
+      className={`py-20 px-6 relative overflow-hidden transition-colors duration-300 ${isDarkMode ? "bg-gray-800" : "bg-gray-50"}`}
       data-section="services"
     >
-      <div className="max-w-7xl mx-auto">
+      {/* Services Animated Background */}
+      <div className="absolute inset-0">
+        {/* Base gradient */}
+        <div className={combineClasses(
+          'absolute inset-0 opacity-20',
+          isDarkMode 
+            ? 'bg-gradient-to-tl from-gray-900 via-slate-800/30 to-gray-800' 
+            : 'bg-gradient-to-tl from-gray-100 via-slate-50/30 to-gray-50'
+        )}></div>
+        
+        {/* Floating circles */}
+        <div className="absolute top-16 left-16 w-24 h-24 bg-orange-500/5 rounded-full animate-pulse"></div>
+        <div className="absolute bottom-24 right-24 w-32 h-32 bg-blue-500/5 rounded-full animate-bounce" style={{animationDelay: '1.5s'}}></div>
+        <div className="absolute top-1/2 left-1/3 w-16 h-16 bg-purple-500/5 rounded-full animate-pulse" style={{animationDelay: '3s'}}></div>
+        
+        {/* Diagonal lines */}
+        <div className="absolute top-0 left-0 w-full h-full opacity-5">
+          <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-orange-400/20 to-transparent transform rotate-12"></div>
+          <div className="absolute bottom-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-400/20 to-transparent transform -rotate-12"></div>
+        </div>
+      </div>
+      
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="space-y-16">
           {/* Service 1 - Engineering */}
           <div
@@ -21,14 +43,14 @@ export function ServicesSection({ isDarkMode, isVisible }) {
               <h2
                 className={`text-4xl font-bold mb-4 transition-colors duration-300 ${isDarkMode ? "text-white" : "text-gray-900"}`}
               >
-                Custom software solutions for modern businesses
+                Full-Stack Web Development
               </h2>
               <p
                 className={`mb-6 transition-colors duration-300 ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}
               >
-                Developing robust and scalable applications that solve complex
-                business challenges. Leveraging cutting-edge technologies to
-                create innovative digital products.
+                Building scalable web applications from concept to deployment. Specialized in React, Node.js, 
+                and cloud architecture. I deliver responsive, performant solutions that handle enterprise-scale traffic 
+                and provide exceptional user experiences.
               </p>
               <div className="flex space-x-6">
                 <a
@@ -56,27 +78,15 @@ export function ServicesSection({ isDarkMode, isVisible }) {
             >
               <div
                 className={combineClasses(
-                  "w-80 h-64 rounded-lg flex items-center justify-center hover:shadow-xl transition-all duration-300 group",
+                  "w-80 h-64 rounded-lg overflow-hidden hover:shadow-xl transition-all duration-300 group",
                   isDarkMode ? "bg-gray-700" : "bg-gray-200"
                 )}
               >
-                <div
-                  className={combineClasses(
-                    "w-16 h-16 rounded flex items-center justify-center group-hover:scale-110 transition-transform duration-300",
-                    isDarkMode ? "bg-gray-600" : "bg-gray-300"
-                  )}
-                >
-                  <svg
-                    className="w-8 h-8 text-gray-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
-                      clipRule="evenodd" />
-                  </svg>
-                </div>
+                <img
+                  src="/images/services/software-development.jpg"
+                  alt="Custom software solutions"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
               </div>
             </div>
           </div>
@@ -90,27 +100,15 @@ export function ServicesSection({ isDarkMode, isVisible }) {
             <div className="order-2 lg:order-1 flex justify-center">
               <div
                 className={combineClasses(
-                  "w-80 h-64 rounded-lg flex items-center justify-center",
+                  "w-80 h-64 rounded-lg overflow-hidden hover:shadow-xl transition-all duration-300 group",
                   isDarkMode ? "bg-gray-700" : "bg-gray-200"
                 )}
               >
-                <div
-                  className={combineClasses(
-                    "w-16 h-16 rounded flex items-center justify-center",
-                    isDarkMode ? "bg-gray-600" : "bg-gray-300"
-                  )}
-                >
-                  <svg
-                    className="w-8 h-8 text-gray-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
-                      clipRule="evenodd" />
-                  </svg>
-                </div>
+                <img
+                  src="/images/services/product-management.jpg"
+                  alt="Strategic product development"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
               </div>
             </div>
             <div className="order-1 lg:order-2">
@@ -213,27 +211,15 @@ export function ServicesSection({ isDarkMode, isVisible }) {
             <div className="flex justify-center">
               <div
                 className={combineClasses(
-                  "w-80 h-64 rounded-lg flex items-center justify-center",
+                  "w-80 h-64 rounded-lg overflow-hidden hover:shadow-xl transition-all duration-300 group",
                   isDarkMode ? "bg-gray-700" : "bg-gray-200"
                 )}
               >
-                <div
-                  className={combineClasses(
-                    "w-16 h-16 rounded flex items-center justify-center",
-                    isDarkMode ? "bg-gray-600" : "bg-gray-300"
-                  )}
-                >
-                  <svg
-                    className="w-8 h-8 text-gray-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
-                      clipRule="evenodd" />
-                  </svg>
-                </div>
+                <img
+                  src="/images/services/technical-consulting.jpg"
+                  alt="Expert technical guidance"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
               </div>
             </div>
           </div>
