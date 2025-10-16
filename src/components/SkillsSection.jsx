@@ -68,7 +68,7 @@ export function SkillsSection({ isDarkMode, isVisible }) {
               isDarkMode ? "text-gray-300" : "text-gray-600"
             )}
           >
-            Proven expertise across the full development stack with 5+ years of hands-on experience. 
+            Proven expertise across the full development stack with 1+ years of hands-on experience. 
             Specialized in modern frameworks, cloud infrastructure, and agile development practices.
           </p>
         </div>
@@ -88,7 +88,7 @@ export function SkillsSection({ isDarkMode, isVisible }) {
               )}
             >
               <img
-                src="/images/skills/software-development.jpg"
+                src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop&crop=entropy&auto=format&q=80"
                 alt="Software development"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
@@ -126,7 +126,7 @@ export function SkillsSection({ isDarkMode, isVisible }) {
               )}
             >
               <img
-                src="/images/skills/product-strategy.jpg"
+                src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop&crop=entropy&auto=format&q=80"
                 alt="Product strategy"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
@@ -164,7 +164,7 @@ export function SkillsSection({ isDarkMode, isVisible }) {
               )}
             >
               <img
-                src="/images/skills/agile-methodologies.jpg"
+                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&h=400&fit=crop&crop=entropy&auto=format&q=80"
                 alt="Agile methodologies"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />

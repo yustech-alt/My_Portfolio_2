@@ -110,7 +110,7 @@ export function CallToActionSection({ isDarkMode, isVisible }) {
               )}
             >
               <img
-                src="/images/cta-collaboration.jpg"
+                src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&h=400&fit=crop&crop=entropy&auto=format&q=80"
                 alt="Digital transformation collaboration"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />

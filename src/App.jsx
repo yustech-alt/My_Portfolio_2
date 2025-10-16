@@ -62,7 +62,7 @@ export default function App() {
       title: "Enterprise SaaS Dashboard",
       description:
         "Full-stack analytics platform serving 10K+ users with real-time data visualization and 99.9% uptime",
-      image: "/images/projects/saas-dashboard.jpg",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80",
       tags: ["React", "Node.js", "PostgreSQL", "AWS"],
       metrics: "10K+ users, 99.9% uptime"
     },
@@ -71,7 +71,7 @@ export default function App() {
       title: "E-commerce Microservices",
       description:
         "Scalable microservices architecture handling 50K+ daily transactions with automated CI/CD pipeline",
-      image: "/images/projects/ecommerce-platform.jpg",
+      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80",
       tags: ["Node.js", "Docker", "Kubernetes", "MongoDB"],
       metrics: "50K+ daily transactions"
     },
@@ -80,7 +80,7 @@ export default function App() {
       title: "Real-time Chat Application",
       description:
         "WebSocket-based messaging platform with end-to-end encryption supporting 5K+ concurrent users",
-      image: "/images/projects/chat-app.jpg",
+      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80",
       tags: ["React", "Socket.io", "Redis", "Express"],
       metrics: "5K+ concurrent users"
     },
@@ -88,7 +88,7 @@ export default function App() {
       id: 4,
       title: "AI-Powered Content CMS",
       description: "Headless CMS with AI content generation, reducing content creation time by 60%",
-      image: "/images/projects/ai-cms.jpg",
+      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80",
       tags: ["Next.js", "Python", "OpenAI", "Strapi"],
       metrics: "60% time reduction"
     },
@@ -96,7 +96,7 @@ export default function App() {
       id: 5,
       title: "Financial Trading Platform",
       description: "High-frequency trading dashboard with sub-100ms latency and advanced risk management",
-      image: "/images/projects/trading-platform.jpg",
+      image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80",
       tags: ["TypeScript", "WebSockets", "PostgreSQL", "AWS"],
       metrics: "Sub-100ms latency"
     },

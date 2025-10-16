@@ -98,7 +98,7 @@ export function TestimonialsSection({ isDarkMode, isVisible }) {
             <div className="flex items-center">
               <div className="w-12 h-12 rounded-full mr-4 overflow-hidden">
                 <img
-                  src="/images/testimonials/mark-stevens.jpg"
+                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face&auto=format&q=80"
                   alt="Mark Stevens"
                   className="w-full h-full object-cover"
                 />
@@ -179,7 +179,7 @@ export function TestimonialsSection({ isDarkMode, isVisible }) {
             <div className="flex items-center">
               <div className="w-12 h-12 rounded-full mr-4 overflow-hidden">
                 <img
-                  src="/images/testimonials/emily-rodriguez.jpg"
+                  src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face&auto=format&q=80"
                   alt="Emily Rodriguez"
                   className="w-full h-full object-cover"
                 />
@@ -260,7 +260,7 @@ export function TestimonialsSection({ isDarkMode, isVisible }) {
             <div className="flex items-center">
               <div className="w-12 h-12 rounded-full mr-4 overflow-hidden">
                 <img
-                  src="/images/testimonials/david-chen.jpg"
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face&auto=format&q=80"
                   alt="David Chen"
                   className="w-full h-full object-cover"
                 />

@@ -83,7 +83,7 @@ export function ServicesSection({ isDarkMode, isVisible }) {
                 )}
               >
                 <img
-                  src="/images/services/software-development.jpg"
+                  src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop&crop=entropy&auto=format&q=80"
                   alt="Custom software solutions"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -105,7 +105,7 @@ export function ServicesSection({ isDarkMode, isVisible }) {
                 )}
               >
                 <img
-                  src="/images/services/product-management.jpg"
+                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop&crop=entropy&auto=format&q=80"
                   alt="Strategic product development"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -216,7 +216,7 @@ export function ServicesSection({ isDarkMode, isVisible }) {
                 )}
               >
                 <img
-                  src="/images/services/technical-consulting.jpg"
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop&crop=entropy&auto=format&q=80"
                   alt="Expert technical guidance"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />

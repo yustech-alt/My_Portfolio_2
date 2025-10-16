@@ -1,16 +1,17 @@
 import { useTheme } from '../contexts/ThemeContext.jsx';
 import { themeClasses, combineClasses } from '../utils/themeClasses.js';
+import profile from '../assets/img/profile.png';
 
 export default function About({ isVisible }) {
   const { isDarkMode } = useTheme();
 
   const skills = [
     { name: 'React/Next.js/TypeScript', level: 95 },
-    { name: 'Node.js/Express/MongoDB', level: 90 },
-    { name: 'Python/Django/FastAPI', level: 85 },
-    { name: 'AWS/Docker/Kubernetes', level: 80 },
-    { name: 'PostgreSQL/Redis/GraphQL', level: 85 },
-    { name: 'Git/CI-CD/Agile/Scrum', level: 90 }
+    { name: 'Node.js/Express/MongoDB', level: 0},
+    { name: 'Python/Django/FastAPI', level: 10 },
+    { name: 'AWS/Docker/Kubernetes', level: 0},
+    { name: 'PostgreSQL/Redis/GraphQL', level: 0 },
+    { name: 'Git/CI-CD/Agile/Scrum', level: 30 }
   ];
 
   const achievements = [
@@ -39,12 +40,22 @@ export default function About({ isVisible }) {
     )} data-section="about" id="about">
       {/* Professional Animated Background */}
       <div className="absolute inset-0">
+        {/* Professional workspace background */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10"
+          style={{
+            backgroundImage: `url(https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&h=800&fit=crop&crop=entropy&auto=format&q=80)`,
+            backgroundPosition: 'center center',
+            backgroundSize: 'cover'
+          }}
+        ></div>
+        
         {/* Base gradient overlay */}
         <div className={combineClasses(
-          'absolute inset-0 opacity-30',
+          'absolute inset-0 opacity-90',
           isDarkMode 
-            ? 'bg-gradient-to-tr from-gray-900 via-slate-800/50 to-blue-900/20' 
-            : 'bg-gradient-to-tr from-gray-50 via-blue-50/30 to-indigo-50/20'
+            ? 'bg-gradient-to-tr from-gray-900 via-slate-800/95 to-blue-900/80' 
+            : 'bg-gradient-to-tr from-white via-blue-50/95 to-indigo-50/80'
         )}></div>
         
         {/* Animated geometric elements */}
@@ -90,7 +101,7 @@ export default function About({ isVisible }) {
             'max-w-2xl text-lg transition-colors duration-300',
             isDarkMode ? 'text-gray-300' : 'text-gray-600'
           )}>
-            Full-stack developer with 5+ years of experience building enterprise applications and leading product development. 
+            Full-stack developer with 1+ years of experience building enterprise applications and leading product development. 
             I specialize in React, Node.js, and cloud architecture, delivering solutions that scale from startup to enterprise.
           </p>
         </div>
@@ -116,7 +127,7 @@ export default function About({ isVisible }) {
                     : 'bg-gradient-to-br from-white via-gray-50 to-gray-100 border-gray-200/50'
                 )}>
                   <img
-                    src="/images/about-profile.jpg"
+                    src={profile}
                     alt="Yusuf Labi - Software Engineer"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
@@ -143,7 +154,7 @@ export default function About({ isVisible }) {
                   'mb-4 leading-relaxed transition-colors duration-300',
                   isDarkMode ? 'text-gray-300' : 'text-gray-600'
                 )}>
-                  With over 5 years of experience in software development, I've had the privilege of working on diverse projects 
+                  With over 1 year of experience in software development, I've had the privilege of working on diverse projects 
                   ranging from e-commerce platforms to AI-powered applications. My journey began with a curiosity about how 
                   technology can solve real-world problems.
                 </p>
@@ -204,39 +215,131 @@ export default function About({ isVisible }) {
               ? 'opacity-100 translate-x-0' 
               : 'opacity-0 translate-x-10'
           }`}>
-            {/* Skills Section */}
+            {/* Skills Section - Learning Journey */}
             <div>
               <h3 className={combineClasses(
-                'text-2xl font-bold mb-6 transition-colors duration-300',
+                'text-2xl font-bold mb-4 transition-colors duration-300',
                 isDarkMode ? 'text-white' : 'text-gray-900'
-              )}>Technical Skills</h3>
-              <div className="space-y-4">
-                {skills.map((skill, index) => (
-                  <div key={index} className="space-y-2">
-                    <div className="flex justify-between items-center">
-                      <span className={combineClasses(
-                        'font-medium transition-colors duration-300',
-                        isDarkMode ? 'text-gray-300' : 'text-gray-700'
-                      )}>{skill.name}</span>
-                      <span className={combineClasses(
-                        'text-sm transition-colors duration-300',
-                        isDarkMode ? 'text-gray-400' : 'text-gray-500'
-                      )}>{skill.level}%</span>
-                    </div>
-                    <div className={combineClasses(
-                      'w-full h-2 rounded-full',
-                      isDarkMode ? 'bg-gray-700' : 'bg-gray-200'
+              )}>Technical Skills & Learning Journey</h3>
+              <p className={combineClasses(
+                'text-sm mb-6 transition-colors duration-300',
+                isDarkMode ? 'text-gray-400' : 'text-gray-600'
+              )}>
+                Currently focused on mastering React and expanding into full-stack development
+              </p>
+              
+              <div className="space-y-6">
+                {skills.map((skill, index) => {
+                  const getSkillStatus = (level) => {
+                    if (level >= 80) return { status: 'Expert', color: 'from-green-500 to-emerald-600', bgColor: isDarkMode ? 'bg-green-900/30' : 'bg-green-50' };
+                    if (level >= 50) return { status: 'Proficient', color: 'from-blue-500 to-indigo-600', bgColor: isDarkMode ? 'bg-blue-900/30' : 'bg-blue-50' };
+                    if (level >= 20) return { status: 'Learning', color: 'from-yellow-500 to-orange-600', bgColor: isDarkMode ? 'bg-yellow-900/30' : 'bg-yellow-50' };
+                    if (level > 0) return { status: 'Beginner', color: 'from-purple-500 to-pink-600', bgColor: isDarkMode ? 'bg-purple-900/30' : 'bg-purple-50' };
+                    return { status: 'Planned', color: 'from-gray-400 to-gray-500', bgColor: isDarkMode ? 'bg-gray-800/30' : 'bg-gray-100' };
+                  };
+                  
+                  const skillInfo = getSkillStatus(skill.level);
+                  
+                  return (
+                    <div key={index} className={combineClasses(
+                      'p-4 rounded-xl border transition-all duration-300 hover:shadow-lg',
+                      skillInfo.bgColor,
+                      isDarkMode ? 'border-gray-700/50' : 'border-gray-200/50'
                     )}>
-                      <div 
-                        className="h-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full transition-all duration-1000 ease-out"
-                        style={{ 
-                          width: isVisible ? `${skill.level}%` : '0%',
-                          transitionDelay: `${index * 100}ms`
-                        }}
-                      />
+                      <div className="flex justify-between items-center mb-3">
+                        <div className="flex items-center space-x-3">
+                          <span className={combineClasses(
+                            'font-semibold transition-colors duration-300',
+                            isDarkMode ? 'text-gray-200' : 'text-gray-800'
+                          )}>{skill.name}</span>
+                          <span className={combineClasses(
+                            'px-2 py-1 text-xs font-medium rounded-full',
+                            isDarkMode ? 'bg-gray-700 text-gray-300' : 'bg-white text-gray-600'
+                          )}>
+                            {skillInfo.status}
+                          </span>
+                        </div>
+                        {skill.level > 0 && (
+                          <span className={combineClasses(
+                            'text-sm font-medium',
+                            isDarkMode ? 'text-gray-400' : 'text-gray-600'
+                          )}>{skill.level}%</span>
+                        )}
+                      </div>
+                      
+                      {skill.level > 0 ? (
+                        <div className={combineClasses(
+                          'w-full h-2 rounded-full',
+                          isDarkMode ? 'bg-gray-700' : 'bg-gray-200'
+                        )}>
+                          <div 
+                            className={`h-2 bg-gradient-to-r ${skillInfo.color} rounded-full transition-all duration-1000 ease-out`}
+                            style={{ 
+                              width: isVisible ? `${skill.level}%` : '0%',
+                              transitionDelay: `${index * 150}ms`
+                            }}
+                          />
+                        </div>
+                      ) : (
+                        <div className={combineClasses(
+                          'flex items-center space-x-2 text-sm',
+                          isDarkMode ? 'text-gray-500' : 'text-gray-500'
+                        )}>
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                          </svg>
+                          <span>Next on my learning roadmap</span>
+                        </div>
+                      )}
                     </div>
+                  );
+                })}
+              </div>
+              
+              {/* Learning Goals */}
+              <div className={combineClasses(
+                'mt-8 p-6 rounded-xl border-2 border-dashed transition-all duration-300',
+                isDarkMode ? 'border-blue-700/50 bg-blue-900/10' : 'border-blue-300/50 bg-blue-50/50'
+              )}>
+                <h4 className={combineClasses(
+                  'font-semibold mb-3 flex items-center',
+                  isDarkMode ? 'text-blue-300' : 'text-blue-700'
+                )}>
+                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                  2024 Learning Goals
+                </h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div className={combineClasses(
+                    'flex items-center space-x-2 text-sm',
+                    isDarkMode ? 'text-gray-300' : 'text-gray-700'
+                  )}>
+                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                    <span>Master Node.js & Express</span>
                   </div>
-                ))}
+                  <div className={combineClasses(
+                    'flex items-center space-x-2 text-sm',
+                    isDarkMode ? 'text-gray-300' : 'text-gray-700'
+                  )}>
+                    <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                    <span>Learn AWS & Cloud Architecture</span>
+                  </div>
+                  <div className={combineClasses(
+                    'flex items-center space-x-2 text-sm',
+                    isDarkMode ? 'text-gray-300' : 'text-gray-700'
+                  )}>
+                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                    <span>Database Design & PostgreSQL</span>
+                  </div>
+                  <div className={combineClasses(
+                    'flex items-center space-x-2 text-sm',
+                    isDarkMode ? 'text-gray-300' : 'text-gray-700'
+                  )}>
+                    <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+                    <span>DevOps & CI/CD Pipelines</span>
+                  </div>
+                </div>
               </div>
             </div>
 
